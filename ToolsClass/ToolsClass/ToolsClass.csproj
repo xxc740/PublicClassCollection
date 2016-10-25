@@ -45,6 +45,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HttpHelper\HttpHelper.cs" />
+    <Compile Include="HttpHelper\HttpItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StringHelper\JsonHelper.cs" />
     <Compile Include="SystemHelper\RegistryHelp.cs" />
