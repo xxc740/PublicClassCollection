@@ -45,6 +45,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HttpHelper\CookieItem.cs" />
+    <Compile Include="HttpHelper\HttpCookieHelper.cs" />
     <Compile Include="HttpHelper\HttpHelper.cs" />
     <Compile Include="HttpHelper\HttpItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Net;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.Win32;
+using ToolsClass.HttpHelper;
 using ToolsClass.SystemHelper;
 
 namespace UnitTestProject
@@ -44,6 +46,17 @@ namespace UnitTestProject
             }
 
             register.Dispose();
+        }
+
+        [TestMethod]
+        public void TestGetHtmlIsRight()
+        {
+            HttpItem item = new HttpItem();
+            item.URL = "https://accounts.douban.com/login";
+            var result = new HttpHelper().GetHtml(item);
+            var cookielist = HttpCookieHelper.GetCookieList(result.Cookie);
+            Assert.AreNotEqual(result.StatusCode,"OK","获取失败!");
+            Assert.AreNotEqual(cookielist.Count,0, "获取失败!");
         }
     }
 

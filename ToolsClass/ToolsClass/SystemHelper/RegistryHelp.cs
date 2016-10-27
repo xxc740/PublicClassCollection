@@ -33,10 +33,12 @@ namespace ToolsClass.SystemHelper
             if(registry == null)
                 throw new ArgumentException(nameof(registry));
 
-            rootKey = rootKey.OpenSubKey(name ?? registry.GetRegistryRootName());
+            if (rootKey == null)
+            {
+               return false;
+            }
 
-            if(rootKey == null)
-                return false;
+            rootKey = rootKey.OpenSubKey(name==null?"": registry.GetRegistryRootName());
 
             using (rootKey)
             {
